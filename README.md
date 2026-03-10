@@ -1,108 +1,126 @@
-# 👗 Veloura – AI-Powered Virtual Try-On  
-### *AI-Powered Virtual Try-On*
+# Veloura – AI-Powered Virtual Try-On
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
-![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red?logo=pytorch)
-![Computer Vision](https://img.shields.io/badge/Computer%20Vision-VTON-green)
-![Blender](https://img.shields.io/badge/Blender-3D%20Rendering-orange?logo=blender)
-![Status](https://img.shields.io/badge/Status-Research%20Project-yellow)
+## Project Description
+**Veloura** is a research-oriented project that explores the integration of modern computer vision and deep learning techniques to create an **AI-powered virtual try-on system**. The system allows a user to visualize how a garment would appear on a person using only a **single image of the person and a clothing image**.
 
----
+The primary objective of this project is to investigate how **2D virtual try-on models and 3D human reconstruction techniques** can be combined into a unified pipeline. Traditional virtual try-on systems focus only on generating 2D images. Veloura extends this concept by also reconstructing a **3D human mesh**, enabling further visualization, rendering, and potential applications in immersive environments.
 
-## 📌 Overview  
-**Veloura** is an AI-powered virtual try-on system that enables users to visualize clothing on a person from a single image.  
-It integrates 2D try-on generation and 3D human reconstruction into a unified pipeline, focusing on realism, alignment, and system integration challenges.
+The project integrates multiple state-of-the-art models and tools, including **VITON-HD for high-resolution garment transfer, ECON for 3D human reconstruction, and SMPL-X for parametric human body modeling**. These components are combined to produce both **realistic 2D try-on images and reconstructed 3D human models**, which can then be visualized using **Blender**.
+
+Through this project, we analyze challenges such as **garment alignment, pose estimation, mesh reconstruction, texture mapping, and multi-model pipeline integration**. The work also highlights practical issues in deploying such systems, including dependency management, computational constraints, and rendering limitations.
+
+Veloura serves as both a **research prototype and a technical exploration** of virtual try-on systems that could eventually be used in **e-commerce platforms, virtual fashion experiences, AR/VR applications, and digital avatar generation**.
 
 ---
 
-## 🎯 Use Case  
+## Motivation
+Online fashion platforms face a significant challenge due to high product return rates caused by uncertainty in fit and appearance. Virtual try-on systems aim to address this problem by allowing users to visualize clothing on a digital representation of themselves before purchasing.
 
-- 🛍️ Try clothes virtually before purchasing  
-- 👕 Visualize outfits instantly  
-- 🧑‍🎨 Create styled digital avatars  
-- 🕶️ Applications in AR/VR and gaming  
-- 📦 Reduce return rates in e-commerce  
+Veloura investigates how modern **Virtual Try-On Networks (VTON)** and **3D reconstruction pipelines** can be integrated to create more immersive and realistic try-on experiences.
 
 ---
 
-## 🧠 Key Features  
-
-- High-resolution **2D virtual try-on (VITON-HD)**  
-- **3D human reconstruction (ECON)** from a single image  
-- Pose-aware garment alignment and warping  
-- Blender-based 3D visualization  
-- End-to-end multi-model pipeline  
+## Applications
+- E-commerce virtual fitting rooms  
+- Digital fashion visualization  
+- AR/VR avatar customization  
+- Gaming and metaverse character styling  
+- Reducing return rates in online retail  
 
 ---
 
-## 🏗️ Tech Stack  
+## System Architecture
 
-### 🔹 Languages & Frameworks  
-- Python  
+### Input
+The system requires two inputs:
+- A **person image** (frontal view)
+- A **target clothing image**
+
+### Stage 1: 2D Virtual Try-On
+The first stage generates a realistic try-on image using **VITON-HD**.
+
+Processes involved:
+- Human parsing and segmentation  
+- Pose estimation  
+- Garment warping and alignment  
+- Image synthesis for realistic clothing transfer  
+
+### Stage 2: 3D Human Reconstruction
+The generated image is used to reconstruct a **3D human mesh** using **ECON**.
+
+Key steps include:
+- Surface normal estimation  
+- Depth reconstruction  
+- Mesh generation using SMPL-X body models  
+
+### Stage 3: Visualization
+The reconstructed mesh is imported into **Blender** for visualization and rendering.
+
+Operations performed:
+- Mesh import and scene setup  
+- Texture projection experiments  
+- Rendering of reconstructed 3D avatars  
+
+---
+
+## Technology Stack
+
+### Programming
+- Python
+
+### Deep Learning Frameworks
 - PyTorch  
-- OpenCV  
-
-### 🔹 Models Used  
-- **VITON-HD** – High-resolution 2D try-on  
-- **ECON** – 3D human reconstruction  
-- **SMPL-X** – Human body modeling  
-
-### 🔹 Tools  
-- Blender (rendering & visualization)  
 - PyTorch3D  
-- MediaPipe (pose estimation)  
+
+### Computer Vision
+- OpenCV  
+- MediaPipe (pose estimation)
+
+### Models
+- **VITON-HD** – High-resolution virtual try-on generation  
+- **ECON** – Single-image 3D human reconstruction  
+- **SMPL-X** – Parametric human body model  
+
+### Visualization
+- Blender  
 
 ---
 
-## ⚙️ Pipeline  
+## Results
+The project successfully demonstrates the integration of multiple AI pipelines.
 
-### 🔄 Workflow  
+Key outcomes:
+- Realistic **2D virtual try-on image generation**
+- Successful **3D human mesh reconstruction**
+- Experimental **3D visualization using Blender**
 
-1. **Input**  
-   - Person image (front view)  
-   - Target clothing image  
-
-2. **2D Try-On (VITON-HD)**  
-   - Segmentation and pose estimation  
-   - Garment warping and alignment  
-   - Realistic try-on image generation  
-
-3. **3D Reconstruction (ECON)**  
-   - Normal map estimation  
-   - Depth reconstruction  
-   - Mesh generation  
-
-4. **Visualization (Blender)**  
-   - Import reconstructed mesh  
-   - Attempt texture projection  
-   - Render 3D output  
+Observed limitations:
+- Texture mapping and UV alignment challenges  
+- High computational cost on CPU-only systems  
+- Complexity in integrating multiple models and frameworks  
 
 ---
 
-## 📊 Results  
+## Challenges
+Several technical challenges were encountered:
 
-- ✅ Realistic 2D try-on outputs  
-- ✅ Successful 3D mesh reconstruction  
-- ⚠️ Texture projection not fully successful  
-- ⚠️ CPU-based execution resulted in slow performance  
-
----
-
-## ⚠️ Challenges  
-
-- Texture mapping and UV projection issues  
-- Integration of multiple pipelines  
-- Dependency and environment setup complexity  
-- High computation time without GPU  
+- Integration of multiple deep learning pipelines  
+- Dependency and environment setup issues  
+- Texture projection and UV mapping difficulties  
+- Slow inference due to lack of GPU acceleration  
 
 ---
 
-## 🚀 Future Work  
+## Future Work
+Potential improvements include:
 
-- Improve texture mapping pipeline  
-- Automate integration workflow  
-- Enable GPU acceleration  
-- Enhance realism and rendering quality  
-- Deploy as a web/mobile application  
+- Developing a more robust texture mapping pipeline  
+- Automating the full end-to-end workflow  
+- Enabling GPU acceleration for faster processing  
+- Improving mesh realism and garment simulation  
+- Deploying the system as a web or mobile application  
 
 ---
+
+## Project Status
+Research prototype – ongoing development and experimentation.
