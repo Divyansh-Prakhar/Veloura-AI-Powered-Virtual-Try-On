@@ -1,4 +1,6 @@
 # Veloura – AI-Powered Virtual Try-On
+<img width="2697" height="1517" alt="image" src="https://github.com/user-attachments/assets/3eb67ab1-e133-4219-b8f7-feb4e6df129a" />
+
 
 Veloura is an experimental **AI-powered virtual try-on system** that allows users to visualize how a garment would look on a person using only a **single image of the person and a clothing image**.  
 The project investigates how modern **2D virtual try-on networks and 3D human reconstruction models** can be combined into a unified pipeline. The system produces both a **realistic 2D try-on image** and a **reconstructed 3D human mesh** for visualization.
@@ -16,6 +18,8 @@ Veloura integrates multiple computer vision techniques to simulate clothing tran
 - **Modular Pipeline** – The system is designed as a multi-stage pipeline so that each component can be improved or replaced independently.
 
 ---
+<img width="867" height="438" alt="image" src="https://github.com/user-attachments/assets/412e6701-d3ea-4e47-97eb-b00c76f7d12e" />
+
 
 ## System Pipeline
 
