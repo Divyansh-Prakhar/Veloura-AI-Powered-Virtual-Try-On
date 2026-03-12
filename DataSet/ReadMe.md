@@ -13,7 +13,7 @@ Due to GitHub file size limitations, the dataset is **not included** in this rep
 You can download the dataset from the link below:
 
 **Dataset Download:**  
-https://drive.google.com/drive/folders/19kFliwAZ8rST3Pos0iOPZBGrITP3Bqlb
+https://drive.google.com/file/d/1fVSLY91uP7kfTeN1Ubb0kD3wIcTnI9fl/view?usp=drive_link
 
 After downloading, extract the dataset into the `datasets/` directory so the structure looks like this:
 
