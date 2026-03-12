@@ -14,7 +14,7 @@ Due to GitHub file size limitations, the pretrained weights are **not included i
 You can download the pretrained models from the link below:
 
 **Pretrained Models Download:**  
-[ADD YOUR PRETRAINED MODELS LINK HERE]
+https://drive.google.com/file/d/1gFxkwnG2gykdOo-w4YhaZ3RQy-hPuDDb/view?usp=drive_link
 
 After downloading, place the files inside the `checkpoints/` directory so the structure looks like this:
 
